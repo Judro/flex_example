@@ -16,13 +16,14 @@ int		           			{ printf("INT_SYMBOL\n"); }
 \[ 										{printf("LEFT_BRACKET\n");}
 \] 										{printf("RIGHT_BRACKET\n");}
 \) 										{printf("RIGHT_PARENTHESIS\n");}
+\} 										{printf("RIGHT_BRACE\n");}
 \; 										{printf("SEMICOLON\n");}
 \= 										{printf("EQUALS\n");}
 \. 										{printf("DOT\n");}
 \+ 										{printf("PLUS\n");}
 \* 										{printf("STAR\n");}
 \n										{line++;printf("LINE %d\n",line);}
-//.            { /* Ignore any other characters */ }
+. 										{}
 %%
 
 void set_input_string(char* input_str) {

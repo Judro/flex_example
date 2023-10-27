@@ -11,4 +11,4 @@ src/lexer.c: src/lexer.l
 	mv src/lex.yy.c src/lexer.c
 
 clean:
-	rm liblexer.a lexer.o 
+	rm liblexer.a lexer.o src/lexer.c 

@@ -3,9 +3,14 @@ extern "C" {
     fn print_l(buff: *const std::os::raw::c_char);
 }
 
+fn print_lex(inpt: &str) {
+    let input = CString::new(inpt).unwrap();
+    println!("LINE 1");
+    unsafe { print_l(input.as_ptr()) }
+}
+
 fn main() {
-    let input = CString::new(
-        "public class Simple1 {
+    const INPUT: &str = "public class Simple1 {
 	public static void main (String args [ ] ) {
 		int x=3;
 		int y=5;
@@ -14,9 +19,6 @@ fn main() {
 		System.out.println(res);
 	}
 }
-",
-    )
-    .unwrap();
-    println!("LINE 1");
-    unsafe { print_l(input.as_ptr()) }
+";
+    print_lex(INPUT);
 }
