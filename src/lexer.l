@@ -10,7 +10,8 @@ static           			{ printf("STATIC_SYMBOL\n"); }
 void	           			{ printf("VOID_SYMBOL\n"); }
 int		           			{ printf("INT_SYMBOL\n"); }
 [a-zA-Z][a-zA-Z0-9]*  { printf("IDENTIFIER: %s\n", yytext); }
-[0-9]+  { printf("INTCONST: %s\n", yytext); }
+[0-9]+  							{ printf("INTCONST: %s\n", yytext); }
+\".*\"  							{ printf("STRINGCONST: %s\n", yytext); }
 \{ 										{printf("LEFT_BRACE\n");}
 \( 										{printf("LEFT_PARENTHESIS\n");}
 \[ 										{printf("LEFT_BRACKET\n");}
